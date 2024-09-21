@@ -1,0 +1,1200 @@
+/* ------------------------------- Import google fonts ---------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+
+/* ------------------------------- CSS Variable declaration ---------------------------------------- */
+:root {
+  --background-color: #fbfbfb;
+  --green-background-color: #153e52;
+  --dark-green-color: #113448;
+  --light-green-color: #14bf98;
+  --dark-gray-color: #484a46;
+  --light-gray-color: #787976;
+  --white-color: #ffffff;
+  --disabled-color: #e9ecef;
+  --dark-white-color: #dfe5ec;
+  --light-grey-border-color: #EBE8E8;
+  --form-input-bg-color: #2A5D77;
+  --form-input-border-color: #39728F;
+  --footer-text-color: #CFD7DF;
+
+  --image-contrast: 60%;
+  --image-grayscale: 25%
+}
+
+
+/* ------------------------------- Common Css Style for all ---------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+button,
+li,
+input,
+text,
+textarea,
+label,
+select,
+option {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid var(--light-green-color);
+  background-color: var(--light-green-color);
+  color: var(--white-color);
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  transition: all 0.125s ease-in-out;
+  font-weight: 700;
+  letter-spacing: 0.3ch;
+  font-size: 0.75rem;
+}
+
+button:hover {
+  background-color: transparent;
+  color: var(--light-green-color);
+}
+
+.section-title {
+  color: var(--light-green-color);
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ------------------------------- Navigation Section CSS style ---------------------------------------- */
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  position: fixed;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  padding: 1rem 3rem;
+  box-sizing: border-box;
+  text-align: center;
+  color: var(--white-color);
+  z-index: 100;
+  background-color: #49819758;
+}
+
+nav img {
+  width: 4.3rem;
+  height: 3.3rem;
+  margin-top: -0.5rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--white-color);
+  transition: color 0.125s ease-in-out;
+}
+
+nav a:visited {
+  color: var(--white-color);
+}
+
+nav a:hover {
+  color: var(--light-green-color);
+}
+
+nav ul .icon {
+  background-color: var(--light-green-color);
+  padding: 0.55rem;
+  cursor: pointer;
+  clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+}
+
+nav ul .icon:hover {
+  background-color: var(--white-color);
+}
+
+nav ul .icon:hover a {
+  color: var(--light-green-color);
+}
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* ------------------------------- Home Section CSS style ---------------------------------------- */
+.home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../public/assets/image/homeBg.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+}
+
+.home h1 {
+  text-transform: uppercase;
+  font-size: 4.3rem;
+  color: var(--white-color);
+}
+
+.home p {
+  font-size: 1.2rem;
+  color: var(--white-color);
+  width: 50%;
+}
+
+
+/* ------------------------------- Intro Section CSS style ---------------------------------------- */
+.intro {
+  padding: 5rem 10vw;
+  background-color: var(--white-color);
+}
+
+.intro .content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.intro .content .text {
+  width: 40%;
+  flex-shrink: 0;
+  padding-right: 2rem;
+  box-sizing: border-box;
+}
+
+.intro .content .text h3 {
+  color: var(--dark-gray-color);
+  font-size: 2rem;
+}
+
+.intro .content .text p {
+  color: var(--light-gray-color);
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.intro .content .text h4 {
+  color: var(--dark-gray-color);
+  line-height: 2.5rem;
+}
+
+.intro .content .image-container {
+  width: 60%;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.intro .content .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.intro .content .image-container img:hover {
+  transform: scale(1.5);
+}
+
+.intro .skill-list-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.intro .skill-list-container .skill-item {
+  width: 30%;
+  line-height: 1.5rem;
+}
+
+.intro .skill-list-container .skill-item span {
+  background-color: var(--light-green-color);
+  padding: 2rem;
+  border-radius: 3px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  color: var(--white-color);
+  font-size: 2rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.intro .skill-list-container .skill-item h4 {
+  font-size: 1.5rem;
+  color: var(--dark-gray-color);
+}
+
+.intro .skill-list-container .skill-item p {
+  color: var(--light-gray-color);
+}
+
+
+/* ------------------------------- Service Section CSS style ---------------------------------------- */
+.services {
+  padding: 5rem 0vw;
+}
+
+.services>span {
+  display: block;
+  text-align: center;
+}
+
+.services>h3 {
+  text-align: center;
+  font-size: 1.75rem;
+  color: var(--dark-gray-color);
+}
+
+.services .service-list-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 3rem 20vh;
+  align-items: start;
+}
+
+.services .service-list-container .service-item {
+  width: 30%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid var(--light-grey-border-color);
+  border-radius: 5px;
+  background-color: var(--white-color);
+}
+
+.services .service-item img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(var(--image-grayscale)) contrast(var(--image-contrast));
+  border-radius: 5px 5px 0 0;
+}
+
+.services .service-item h4 {
+  text-align: center;
+  color: var(--dark-gray-color);
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+}
+
+.services .service-item p {
+  line-height: 1.5rem;
+  color: var(--light-gray-color);
+  padding: 0.5rem 2rem;
+}
+
+.services .service-item ul {
+  line-height: 1.5rem;
+  color: var(--light-gray-color);
+  padding: 0.5rem 2rem;
+  list-style-type: none;
+}
+
+.services .service-item ul li::before {
+  content: '\25a0';
+  color: var(--light-green-color);
+  margin-right: 5px;
+  font-size: 1.25rem;
+}
+
+.services .service-item h6 {
+  font-size: 1.2rem;
+  color: var(--dark-gray-color);
+  text-align: center;
+  padding: 0.5rem 2rem;
+
+}
+
+.services .service-item h6 .price {
+  color: var(--light-green-color);
+}
+
+.services .service-item button {
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.services .service-item button:hover {
+  background-color: var(--white-color);
+}
+
+.services .propositions {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--white-color);
+}
+
+.services .propositions img {
+  width: 50%;
+  min-height: 35rem;
+  filter: grayscale(var(--image-grayscale)) contrast(var(--image-contrast));
+  object-fit: cover;
+  object-position: center;
+}
+
+.services .propositions .content {
+  width: 50%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.services .propositions-1 .content {
+  padding: 5rem 10vw 5rem 5rem;
+}
+
+.services .propositions-1 h4 {
+  color: var(--dark-gray-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.125s ease-in-out;
+}
+
+.services .propositions-1 .content>p {
+  padding-left: 3rem;
+}
+
+.services .propositions-1 h4 span {
+  border: 2px solid var(--dark-gray-color);
+  border-radius: 50%;
+  padding: 0 0.6rem;
+  color: var(--dark-gray-color);
+  margin-right: 0.5rem;
+  transition: all 0.125s ease-in-out;
+}
+
+.services .propositions-1 h4:hover span {
+  border-color: var(--light-green-color);
+  color: var(--light-green-color);
+}
+
+.services .propositions-1 h4.active span {
+  color: var(--white-color);
+  background-color: var(--light-green-color);
+  border-color: var(--light-green-color);
+}
+
+.services .propositions-1 h4.active,
+.services .propositions-1 h4:hover {
+  color: var(--light-green-color);
+}
+
+.services .propositions-2 .content {
+  padding: 5rem 5rem 5rem 10vw;
+}
+
+.services .propositions-2 .category-list-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.services .propositions-2 .category-item h3 {
+  color: #c1cace;
+  transition: all 0.125s ease-in-out;
+  cursor: pointer;
+}
+
+.services .propositions-2 .category-item h3.active,
+.services .propositions-2 .category-item h3:hover {
+  color: var(--light-green-color);
+}
+
+.services .propositions h3 {
+  color: var(--dark-gray-color);
+  font-size: 1.5rem;
+}
+
+.services .propositions p {
+  line-height: 1.5rem;
+  color: var(--light-gray-color);
+}
+
+.services .propositions-2 .skill-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.services .propositions-2 .skill-list-container .skill-item h6 {
+  color: var(--dark-gray-color);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.services .propositions-2 .skill-item .progress-bar {
+  height: 1.5rem;
+  background-color: var(--light-green-color);
+  border-radius: 5px;
+  margin-top: 0.2rem;
+  width: 0;
+}
+
+.services .propositions-2 .skill-item .progress-bar.p-100 {
+  width: 100%;
+}
+
+.services .propositions-2 .skill-item .progress-bar.p-76 {
+  width: 76%;
+}
+
+.services .propositions-2 .skill-item .progress-bar.p-90 {
+  width: 90%;
+}
+
+.services .testimonials {
+  padding: 5rem 10vw;
+}
+
+.services .testimonials h3 {
+  color: var(--dark-gray-color);
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+.services .testimonials p {
+  color: var(--light-gray-color);
+  text-align: center;
+}
+
+.services .testimonials-list-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  overflow-x: scroll;
+  padding: 3rem 0;
+}
+
+.services .testimonials-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.services .testimonials-item img {
+  width: 6.3rem;
+  border-radius: 50%;
+}
+
+.services .testimonials-item p {
+  line-height: 1.5rem;
+  color: var(--light-gray-color);
+}
+
+.services .testimonials-item h4 {
+  color: var(--dark-gray-color);
+}
+
+
+/* ------------------------------- Call Me Section CSS style ---------------------------------------- */
+.call_me {
+  padding: 5rem 10vw;
+  background-color: var(--green-background-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.call_me .content,
+.call_me .form {
+  width: 45%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  color: var(--white-color);
+}
+
+.call_me .content h3 {
+  font-size: 1.75rem;
+}
+
+.call_me .content p {
+  line-height: 1.5rem;
+  color: var(--light-grey-border-color);
+}
+
+.call_me .content ul {
+  padding: 0;
+  list-style: none;
+  line-height: 2rem;
+}
+
+.call_me .content ul li::before {
+  content: '\25a0';
+  color: var(--light-green-color);
+  margin-right: 5px;
+  font-size: 1.25rem;
+}
+
+.call_me form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.call_me .terms-container label {
+  color: var(--dark-white-color);
+  padding-left: 0.5rem;
+}
+
+.call_me form input,
+.call_me select {
+  background-color: var(--form-input-bg-color);
+  color: var(--white-color);
+  border: 1px solid var(--form-input-border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+}
+
+
+/* ------------------------------- Project Section CSS style ---------------------------------------- */
+.project {
+  background-color: var(--white-color);
+  padding: 5rem 10vw;
+}
+
+.project>span,
+.project>h3 {
+  display: block;
+  text-align: center;
+}
+
+.project>h3 {
+  color: var(--dark-gray-color);
+  font-size: 1.75rem;
+}
+
+.project .category-list-container ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 0 1rem;
+  list-style: none;
+}
+
+.project .category-list-container ul button {
+  background-color: var(--light-grey-border-color);
+  color: var(--dark-gray-color);
+  border: 1px solid var(--light-grey-border-color);
+  padding: 0.5rem 1rem;
+}
+
+.project .category-list-container ul button.active,
+.project .category-list-container ul button:hover {
+  background-color: var(--light-green-color);
+  color: var(--white-color);
+}
+
+.project .project-list-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.project .project-list-container .project-item-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.project .project-list-container .project-item {
+  aspect-ratio: 1/1;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.125s ease-in-out;
+}
+
+.project .project-list-container h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.125s ease-in-out;
+  font-size: 1.5rem;
+  color: var(--white-color);
+  opacity: 0;
+}
+
+.project .project-list-container .project-item:hover {
+  filter: grayscale(var(--image-grayscale)) contrast(var(--image-contrast));
+  transform: scale(1.5);
+}
+
+.project .project-list-container .project-item:hover~h3 {
+  opacity: 1;
+}
+
+.project .project-list-container .project-item.p-1 {
+  background-image: url('../public/assets/image/projectImg-1.jpg');
+}
+
+.project .project-list-container .project-item.p-2 {
+  background-image: url('../public/assets/image/projectImg-2.jpg');
+}
+
+.project .project-list-container .project-item.p-3 {
+  background-image: url('../public/assets/image/projectImg-3.jpg');
+}
+
+.project .project-list-container .project-item.p-4 {
+  background-image: url('../public/assets/image/projectImg-4.jpg');
+}
+
+.project .project-list-container .project-item.p-5 {
+  background-image: url('../public/assets/image/projectImg-5.jpg');
+}
+
+.project .project-list-container .project-item.p-6 {
+  background-image: url('../public/assets/image/projectImg-6.jpg');
+}
+
+.project .project-list-container .project-item.p-7 {
+  background-image: url('../public/assets/image/projectImg-7.jpg');
+}
+
+.project .project-list-container .project-item.p-8 {
+  background-image: url('../public/assets/image/projectImg-8.jpg');
+}
+
+
+/* ------------------------------- Team Section CSS style ---------------------------------------- */
+.team {
+  padding: 5rem 10vw;
+  background-color: var(--background-color);
+}
+
+.team>h4 {
+  color: var(--dark-gray-color);
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.team>p {
+  color: var(--light-gray-color);
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.team .team-member-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3rem 0;
+  gap: 2rem;
+}
+
+.team .team-member-list-container .team-member-item {
+  width: 20%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.team .team-member-item .profile-pic {
+  width: 100%;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  overflow: hidden;
+}
+
+.team .team-member-item .profile-pic img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.team .team-member-item .profile-pic img:hover {
+  transform: scale(1.2);
+}
+
+.team .team-member-item p {
+  color: var(--light-gray-color);
+  line-height: 1.5rem;
+}
+
+.team .team-member-item h5 {
+  color: var(--dark-gray-color);
+  font-size: 1.25rem;
+}
+
+.team .team-member-item .social-links {
+  margin-top: 1rem;
+}
+
+.team .team-member-item .social-links span {
+  background-color: var(--light-green-color);
+  padding: 0.55rem;
+  cursor: pointer;
+  color: var(--white-color);
+  clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  transition: all 0.35s ease-in-out;
+}
+
+.team .team-member-item .social-links span:hover {
+  background-color: var(--white-color);
+  color: var(--dark-gray-color);
+}
+
+
+/* ------------------------------- About Section CSS style ---------------------------------------- */
+.about {
+  padding: 5rem 10vw;
+  background-color: var(--white-color);
+  display: flex;
+}
+
+.about>img {
+  width: 50%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border-radius: 5px;
+  filter: grayscale(var(--image-grayscale)) contrast(var(--image-contrast));
+}
+
+.about .content {
+  width: 50%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-left: 3rem;
+}
+
+.about .content h3 {
+  color: var(--dark-gray-color);
+  font-size: 1.75rem;
+}
+
+.about .content p {
+  color: var(--light-gray-color);
+  line-height: 1.5rem;
+}
+
+.about .content ul {
+  color: var(--light-gray-color);
+  list-style: none;
+  padding-left: 0;
+}
+
+.about .content ul li::before {
+  content: '\25a0';
+  color: var(--light-green-color);
+  font-size: 1.25rem;
+  margin-right: 5px;
+}
+
+.about .content .stat-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  align-items: center;
+}
+
+.about .content .stat-list-container .stat-item {
+  width: 30%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about .stat-item .number {
+  color: var(--light-green-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+
+/* ------------------------------- Contact Section CSS style ---------------------------------------- */
+.contact {
+  padding: 5rem 10vw;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contact .content,
+.contact .form {
+  width: 45%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.contact .content h3 {
+  counter-reset: var(--dark-gray-color);
+  font-size: 1.75rem;
+}
+
+.contact .content p {
+  color: var(--light-gray-color);
+  line-height: 1.5rem;
+}
+
+.contact .content p i {
+  color: var(--light-green-color);
+  margin: 0 0.5rem;
+  font-size: 0.8rem;
+}
+
+.contact .content .contact-info-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact .content h4 {
+  color: var(--dark-gray-color);
+  font-size: 1.5rem;
+}
+
+.contact .content .social-link-list-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.contact .social-link-list-container .social-link-item {
+  background-color: var(--light-green-color);
+  color: var(--white-color);
+  padding: 0.95rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  transition: all 0.125s ease-in-out;
+}
+
+.contact .social-link-list-container .social-link-item:hover {
+  background-color: var(--white-color);
+  color: var(--light-green-color);
+}
+
+.contact .form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: 1rem;
+}
+
+.contact .form form input,
+.contact textarea {
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--light-grey-border-color);
+  background-color: var(--white-color);
+  color: var(--dark-gray-color);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.contact .form label {
+  color: var(--light-gray-color);
+  line-height: 1.5rem;
+}
+
+
+/* ------------------------------- Contact Section CSS style ---------------------------------------- */
+footer {
+  padding: 5rem 10vw;
+  background-color: var(--dark-green-color);
+  color: var(--white-color);
+}
+
+footer .footer-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+footer .footer-list-container .footer-item.wide {
+  width: 50%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+footer .footer-list-container .footer-item {
+  width: 15%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+footer .footer-list-container h5 {
+  color: var(--white-color);
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+}
+
+footer .footer-list-container p {
+  color: var(--footer-text-color);
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+  padding-right: 5rem;
+}
+
+footer a {
+  display: block;
+}
+
+footer a,
+footer a:visited {
+  color: var(--footer-text-color);
+  line-height: 1.7rem;
+  font-size: 0.9rem;
+}
+
+footer .copyright {
+  padding-top: 3rem;
+  text-align: center;
+  line-height: 1.5rem;
+  color: var(--footer-text-color);
+}
+
+
+
+
+
+/* ---------------------------------------------- Responsive Design ------------------------------------------ */
+
+
+/* ------------------------------- Responsive Design For Width 1200px ---------------------------------------- */
+@media screen and (max-width:1200px) {
+
+  /* --------------- Service Section Responsive Style ---------------- */
+  .services .service-list-container {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .services .service-list-container .service-item {
+    width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}
+
+
+/* ------------------------------- Responsive Design For Width 950px ---------------------------------------- */
+@media screen and (max-width:950px) {
+
+  /* --------------- Navigation bar Section Responsive Style ---------------- */
+  nav ul {
+    display: none;
+  }
+
+  nav .mobile-menu {
+    display: inline;
+    font-size: 2rem;
+  }
+
+
+  /* --------------- Intro Section Responsive Style ---------------- */
+  .intro .content,
+  .intro .skill-list-container {
+    flex-wrap: wrap;
+  }
+
+  .intro .content .text,
+  .intro .content .image-container,
+  .intro .skill-list-container .skill-item {
+    width: 100%;
+    padding: 0;
+  }
+
+  .intro .skill-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6rem;
+  }
+
+
+  /* --------------- Service Section Responsive Style ---------------- */
+  .services .testimonials-item {
+    width: 40%;
+  }
+
+  .services .propositions {
+    flex-direction: column;
+  }
+
+  .services .propositions img,
+  .services .propositions .content {
+    width: 100%;
+  }
+
+  .services .propositions.propositions-2 {
+    flex-direction: column-reverse;
+  }
+
+  .services .propositions .content {
+    padding: 5rem;
+  }
+
+  /* --------------- Call Me Section Responsive Style ---------------- */
+  .call_me {
+    flex-direction: column;
+    gap: 3rem;
+
+  }
+
+  .call_me .content,
+  .call_me .form {
+    width: 100%;
+  }
+
+  /* --------------- Project Section Responsive Style ---------------- */
+  .project .project-list-container {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --------------- Team Section Responsive Style ---------------- */
+  .team .team-member-list-container {
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  .team .team-member-list-container .team-member-item {
+    width: 45%;
+  }
+
+  /* --------------- About Section Responsive Style ---------------- */
+  .about {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .about>img,
+  .about>.content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .about .stat-list-container .stat-item {
+    flex-wrap: wrap;
+  }
+
+
+  /* --------------- Contact Section Responsive Style ---------------- */
+  .contact {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .contact .content,
+  .contact .form {
+    width: 100%;
+  }
+
+  /* --------------- Contact Section Responsive Style ---------------- */
+  footer .footer-list-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  footer .footer-list-container .footer-item.wide {
+    width: 100%;
+    flex-wrap: 0;
+    flex-shrink: 0;
+  }
+
+  footer .footer-list-container .footer-item {
+    width: 25%;
+    flex-wrap: 0;
+    flex-shrink: 0;
+  }
+
+}
+
+
+/* ------------------------------- Responsive Design For Width 800px ---------------------------------------- */
+@media screen and (max-width:800px) {
+
+  .services .service-list-container {
+    padding: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+  }
+
+  .services .service-list-container .service-item {
+    width: 80%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+
+/* ------------------------------- Responsive Design For Width 650px ---------------------------------------- */
+@media screen and (max-width:650px) {
+
+  .services .testimonials-item {
+    width: 65%;
+  }
+
+  footer .footer-list-container .footer-item {
+    width: 100%;
+    flex-wrap: 0;
+    flex-shrink: 0;
+  }
+}
